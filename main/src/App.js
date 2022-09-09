@@ -4,8 +4,14 @@ import Login from './pages/Login'
 import ForgotPassword from './pages/ForgotPassword'
 import ResetPassword from './pages/ResetPassword'
 import SavePassword from './pages/SavePassword'
+import Account from './components/Account/Account'
+import Card from './components/Card/Card'
+import Users from './components/Users/Users'
 import Dashboard from './pages/Dashboard'
 import Main from './components/Main'
+import Admin from './components/Admin/Admin'
+import Withdrawal from './components/Withdrawal/Withdrawal'
+import Loans from './components/Loans/Loans'
 
 function App() {
   return (
@@ -18,6 +24,12 @@ function App() {
         <Route path='/save-password' element={<SavePassword />} />
         <Route path='/dashboard' element={<Dashboard />}>
           <Route index element={<Main />} />
+          <Route path='all-accounts' element={<Account />} />
+          <Route path='cards' element={<Card />} />
+          <Route path='users' element={<Users />} />
+          <Route path='all-admins' element={<Admin />} />
+          <Route path='all-withdrawal' element={<Withdrawal />} />
+          <Route path='all-Loans' element={<Loans />} />
         </Route>
       </Routes>
     </BrowserRouter>
