@@ -13,6 +13,7 @@ import Admin from './components/Admin/Admin'
 import Withdrawal from './components/Withdrawal/Withdrawal'
 import Loans from './components/Loans/Loans'
 import Roles from './components/Roles/Roles'
+import Charges from './components/Charges'
 
 function App() {
   return (
@@ -32,6 +33,7 @@ function App() {
           <Route path='all-withdrawal' element={<Withdrawal />} />
           <Route path='all-Loans' element={<Loans />} />
           <Route path='roles' element={<Roles />} />
+          <Route path='charges' element={<Charges />} />
         </Route>
       </Routes>
     </BrowserRouter>
