@@ -29,7 +29,7 @@ function App() {
       <Routes>
         <Route path='/' element={<Login />} />
         <Route path='/forgot-password' element={<ForgotPassword />} />
-        <Route path='/ResetPassword' element={<ResetPassword />} />
+        <Route path='/reset-password' element={<ResetPassword />} />
         <Route path='/save-password' element={<SavePassword />} />
         <Route path='/dashboard' element={<Dashboard />}>
           <Route index element={<Main />} />
