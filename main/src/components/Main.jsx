@@ -359,7 +359,7 @@ export default function Main()
                             </div>
                         </div>
                     </div>
-                    </div>
+                </div>
                     
                     <div className='mt-3'>
                         Notifications

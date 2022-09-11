@@ -14,8 +14,12 @@ import Withdrawal from './components/Withdrawal/Withdrawal'
 import Loans from './components/Loans/Loans'
 import Roles from './components/Roles/Roles'
 import Charges from './components/Charges'
-import PontSystem from './components/PointSystem'
 import PointSystem from './components/PointSystem';
+import Notifications from './components/Notifications'
+import AccountInfo from './components/Account/AccountInfo'
+import CardInfo from './components/Card/CardInfo'
+import UserInfo from './components/Users/UserInfo'
+import AdminInfo from './components/Admin/AdminInfo'
 
 function App() {
   return (
@@ -37,6 +41,11 @@ function App() {
           <Route path='roles' element={<Roles />} />
           <Route path='charges' element={<Charges />} />
           <Route path='point-system' element={<PointSystem />} />
+           <Route path='notifications' element={<Notifications />} />
+           <Route path='Accountinfo' element={<AccountInfo />} />
+           <Route path='cardinfo' element={<CardInfo />} />
+           <Route path='userinfo' element={<UserInfo />} />
+           <Route path='admininfo' element={<AdminInfo />} />
         </Route>
       </Routes>
     </BrowserRouter>
