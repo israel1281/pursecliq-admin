@@ -20,6 +20,7 @@ import AccountInfo from './components/Account/AccountInfo'
 import CardInfo from './components/Card/CardInfo'
 import UserInfo from './components/Users/UserInfo'
 import AdminInfo from './components/Admin/AdminInfo'
+import AdminDetails from './components/Admin/AdminDetails'
 
 function App() {
   return (
@@ -46,6 +47,7 @@ function App() {
            <Route path='cardinfo' element={<CardInfo />} />
            <Route path='userinfo' element={<UserInfo />} />
            <Route path='admininfo' element={<AdminInfo />} />
+           <Route path='admindetails' element={<AdminDetails />} />
         </Route>
       </Routes>
     </BrowserRouter>
