@@ -2,7 +2,7 @@ import { postAPI } from '../../utils/FetchData';
 import { GLOBALTYPES } from './globalTypes';
 
 
-export const login = (data) = async(dispatch) => {
+export const login = (data) => async(dispatch) => {
     try {
         dispatch({
             type: GLOBALTYPES.ALERT,
@@ -27,14 +27,14 @@ export const login = (data) = async(dispatch) => {
     }
 }
 
-export const forgotPassword = (data, token) = async(dispatch) => {
-    try {
+export const forgotPassword = ({data, token}) => async (dispatch) => {
+   try {
         dispatch({
             type: GLOBALTYPES.ALERT,
             payload: { loading: true }
         })
         
-        const res = await postAPI('forgot_password', data, token)
+        const res = await postAPI('forgot-password', data, token)
         
         dispatch({
             type: GLOBALTYPES.ALERT,
@@ -52,7 +52,7 @@ export const forgotPassword = (data, token) = async(dispatch) => {
     }
 }
 
-export const resetPassword = (data, token) = async (dispatch) => {
+export const resetPassword = ({data, token}) => async (dispatch) => {
     try {
         dispatch({
             type: GLOBALTYPES.ALERT,

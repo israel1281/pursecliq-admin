@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Logo from '../purseblue.png';
 import { useNavigate, Link } from 'react-router-dom';
 import { login } from '../redux/actions/authAction';
@@ -9,6 +9,7 @@ export default function Login()
     const initialState = { email: '', password: '' };
     const [userData, setUserData] = useState(initialState);
     const { email, password } = userData;
+    const [loading, setLoading] = useState(false)
     
     const { auth } = useSelector(state => state);
     const dispatch = useDispatch();
@@ -25,7 +26,11 @@ export default function Login()
     
     const handleSubmit = e => {
         e.preventDefault();
+        setLoading(true)
         dispatch(login(userData))
+        .then(() => {
+            setLoading(false)
+        })
     }
     
     return (
@@ -41,7 +46,7 @@ export default function Login()
                 <div className="bg-slate-900 py-8 px-4 shadow sm:rounded-lg sm:px-10">
                     <form className="space-y-6" onSubmit={handleSubmit}>
                         <div>
-                            <label for="email" className="block text-sm font-medium text-white">
+                            <label htmlFor="email" className="block text-sm font-medium text-white">
                             Email address
                             </label>
                             <div className="mt-1">
@@ -50,7 +55,7 @@ export default function Login()
                                 name="email" 
                                 value={email}
                                 type="email" 
-                                autocomplete="email"
+                                autoComplete="email"
                                 required 
                                 className="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" 
                                 onChange={handleChangeInput}
@@ -59,7 +64,7 @@ export default function Login()
                         </div>
                         
                         <div>
-                            <label for="password" className="block text-sm font-medium text-white">
+                            <label htmlFor="password" className="block text-sm font-medium text-white">
                             Password
                             </label>
                             <div className="mt-1">
@@ -68,7 +73,7 @@ export default function Login()
                                     name="password" 
                                     value={password}
                                     type="password" 
-                                    autocomplete="current-password" 
+                                    autoComplete="current-password" 
                                     required 
                                     className="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" 
                                     onChange={handleChangeInput}
@@ -97,7 +102,22 @@ export default function Login()
                                 className="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
                                 disabled={email && password ? false : true}
                             >
-                                Sign in
+                                {
+                                    loading ?
+                                    <span
+                                        className='
+                                            spinner-border
+                                            animate-spin
+                                            inline-block
+                                            w-4
+                                            h-4
+                                            border-2
+                                            rounded-full
+                                        '
+                                        role="status"
+                                    ></span> 
+                                    : 'Sign in'
+                                }
                             </button>
                         </div>
                     </form>
