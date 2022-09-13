@@ -7,7 +7,7 @@ export default function Admin() {
              <div className="py-6 max-w-7xl mx-auto px-2 sm:px-6 lg:px-2">
                  <div className='w-full'>
                      <div className='flex justify-between'>
-                        <h6 className='ml-10'>All Admin(50)</h6>
+                        <h6 className='ml-10 text-white'>All Admin(50)</h6>
                         <div className='flex'>
                            <SelectTransactions /> 
                            <SelectTransactions />
@@ -22,21 +22,21 @@ export default function Admin() {
                              <div className="py-2 align-middle inline-block min-w-full sm:px-6 lg:px-8">
                                  <div className="shadow overflow-hidden border-b border-gray-200 sm:rounded-lg">
                                        <table className="min-w-full divide-y divide-gray-200">
-                                        <thead className="bg-gray-50">
+                                        <thead className="bg-slate-700">
                                             <tr>
-                                                <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                                <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-white uppercase tracking-wider">
                                                     First Name
                                                 </th>
-                                                <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                                <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-white uppercase tracking-wider">
                                                     Last Name
                                                 </th>
-                                                <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                                <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-white uppercase tracking-wider">
                                                     Phone
                                                 </th>
-                                                <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                                <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-white uppercase tracking-wider">
                                                     Role
                                                 </th>
-                                                <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                                <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-white uppercase tracking-wider">
                                                     Last Logged
                                                 </th>
                                                 <th scope="col" className="relative px-6 py-3">
@@ -44,7 +44,7 @@ export default function Admin() {
                                                 </th>
                                             </tr>
                                         </thead>
-                                        <tbody className="bg-white divide-y divide-gray-200">
+                                        <tbody className="bg-slate-300 divide-y divide-gray-200">
                                             <tr>
                                                 <td className="px-6 py-4 whitespace-nowrap">
                                                    <div className="flex items-center">
@@ -66,10 +66,10 @@ export default function Admin() {
                                                         09080999999
                                                     </span>
                                                 </td>
-                                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
                                                     Accounting
                                                 </td>
-                                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
                                                     24/08/2022
                                                 </td>
                                                 <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">

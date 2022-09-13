@@ -8,7 +8,7 @@ export default function Roles() {
              <div className="py-6 max-w-7xl mx-auto px-2 sm:px-6 lg:px-2">
                  <div className='w-full'>
                      <div className='flex justify-between'>
-                        <h6 className='ml-10'>Staff roles and permission</h6>
+                        <h6 className='ml-10 text-white'>Staff roles and permission</h6>
                         <div className='flex'>
                            <button type="button" className="inline-flex items-center px-4 py-2 mb-4 mr-10 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
                             + Add New Role
@@ -17,12 +17,12 @@ export default function Roles() {
                     
                     </div>
                     <div className="flex justify-around">
-                       <div class="bg-white w-96 shadow overflow-hidden sm:rounded-md">
+                       <div class="bg-slate-300 w-96 shadow overflow-hidden sm:rounded-md">
                            <ul class="divide-y divide-gray-200">
                                <li>
-                                   <div className="block bg-gray-50">
+                                   <div className="block bg-slate-700">
                                        <div className="flex items-center px-2 py-2 sm:px-6">
-                                           <div class="min-w-0 flex-1 flex justify-between items-center">
+                                           <div class="min-w-0 flex-1 text-white flex justify-between items-center">
                                                <h6>App Admin Roles</h6>
                                            </div>
                                        </div>
@@ -34,8 +34,8 @@ export default function Roles() {
                                            <div class="min-w-0 flex-1 flex justify-between items-center">
                                                <h6>Admin</h6>
                                                <div className='flex justify-around w-24'>
-                                                  <EditOutlined /> 
-                                                  <DeleteOutlined />
+                                                  <EditOutlined className='text-green-700 cursor-pointer' /> 
+                                                  <DeleteOutlined className='text-red-700 cursor-pointer' />
                                                </div>
                                            </div>
                                        </div>
@@ -47,8 +47,8 @@ export default function Roles() {
                                            <div class="min-w-0 flex-1 flex justify-between items-center">
                                                <h6>Super Admin</h6>
                                                <div className='flex justify-around w-24'>
-                                                  <EditOutlined /> 
-                                                  <DeleteOutlined />
+                                                  <EditOutlined className='text-green-700 cursor-pointer' /> 
+                                                  <DeleteOutlined className='text-red-700 cursor-pointer' />
                                                </div>
                                            </div>
                                        </div>
@@ -60,8 +60,8 @@ export default function Roles() {
                                            <div class="min-w-0 flex-1 flex justify-between items-center">
                                                <h6>Manager</h6>
                                                <div className='flex justify-around w-24'>
-                                                  <EditOutlined /> 
-                                                  <DeleteOutlined />
+                                                  <EditOutlined className='text-green-700 cursor-pointer' /> 
+                                                  <DeleteOutlined className='text-red-700 cursor-pointer' />
                                                </div>
                                            </div>
                                        </div>
@@ -73,8 +73,8 @@ export default function Roles() {
                                            <div class="min-w-0 flex-1 flex justify-between items-center">
                                                <h6>Supervisor</h6>
                                                <div className='flex justify-around w-24'>
-                                                  <EditOutlined /> 
-                                                  <DeleteOutlined />
+                                                  <EditOutlined className='text-green-700 cursor-pointer' /> 
+                                                  <DeleteOutlined className='text-red-700 cursor-pointer' />
                                                </div>
                                            </div>
                                        </div>
@@ -86,8 +86,8 @@ export default function Roles() {
                                            <div class="min-w-0 flex-1 flex justify-between items-center">
                                                <h6>Project Manager</h6>
                                                <div className='flex justify-around w-24'>
-                                                  <EditOutlined /> 
-                                                  <DeleteOutlined />
+                                                  <EditOutlined className='text-green-700 cursor-pointer' /> 
+                                                  <DeleteOutlined className='text-red-700 cursor-pointer' />
                                                </div>
                                            </div>
                                        </div>
@@ -99,8 +99,8 @@ export default function Roles() {
                                            <div class="min-w-0 flex-1 flex justify-between items-center">
                                                <h6>Assistant Supervisor</h6>
                                                <div className='flex justify-around w-24'>
-                                                  <EditOutlined /> 
-                                                  <DeleteOutlined />
+                                                  <EditOutlined className='text-green-700 cursor-pointer' /> 
+                                                  <DeleteOutlined className='text-red-700 cursor-pointer' />
                                                </div>
                                            </div>
                                        </div>
@@ -109,12 +109,12 @@ export default function Roles() {
                            </ul>
                        </div>
                        <div className='flex flex-col gap-4'>
-                           <div class="bg-white w-96 shadow overflow-hidden sm:rounded-md">
+                           <div class="bg-slate-300 w-96 shadow overflow-hidden sm:rounded-md">
                                 <ul class="divide-y divide-gray-200">
                                     <li>
-                                        <div className="block bg-gray-50">
+                                        <div className="block bg-slate-700">
                                             <div className="flex items-center px-2 py-2 sm:px-6">
-                                                <div class="min-w-0 flex-1 flex justify-between items-center">
+                                                <div class="min-w-0 flex-1 text-white flex justify-between items-center">
                                                     <h6>Permission</h6>
                                                     <h6>Action</h6>
                                                 </div>
