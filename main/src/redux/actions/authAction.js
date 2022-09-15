@@ -1,4 +1,4 @@
-import { postAPI } from '../../utils/FetchData';
+import { postAPI, getAPI } from '../../utils/FetchData';
 import { GLOBALTYPES } from './globalTypes';
 
 
@@ -7,9 +7,44 @@ export const login = (data) => async(dispatch) => {
         dispatch({
             type: GLOBALTYPES.ALERT,
             payload: { loading: true }
-        })
+        });
         
         const res = await postAPI('login', data)
+        dispatch({
+            type: GLOBALTYPES.AUTH,
+            payload: res.data.data,
+        })
+        sessionStorage.setItem('token', res.data.data.token)
+        dispatch({
+            type: GLOBALTYPES.ALERT,
+            payload: {
+                success: res.data.message
+            }
+        });
+    } catch (err) {
+        console.log(err)
+        dispatch({
+            type: GLOBALTYPES.ALERT,
+            payload: {
+                error: err.message,
+            },
+        })
+    }
+}
+
+export const getMe = (token) => async (dispatch) => {
+    try {
+        dispatch({
+            type: GLOBALTYPES.ALERT,
+            payload: { loading: true }
+        })
+        
+        const res = await getAPI('me', token)
+        
+        dispatch({
+            type: GLOBALTYPES.AUTH,
+            payload: res.data.data,
+        })
         
         dispatch({
             type: GLOBALTYPES.ALERT,
@@ -27,14 +62,14 @@ export const login = (data) => async(dispatch) => {
     }
 }
 
-export const forgotPassword = ({data, token}) => async (dispatch) => {
+export const forgotPassword = (data) => async (dispatch) => {
    try {
         dispatch({
             type: GLOBALTYPES.ALERT,
             payload: { loading: true }
         })
         
-        const res = await postAPI('forgot-password', data, token)
+        const res = await postAPI('forgot-password', data)
         
         dispatch({
             type: GLOBALTYPES.ALERT,
@@ -52,7 +87,7 @@ export const forgotPassword = ({data, token}) => async (dispatch) => {
     }
 }
 
-export const resetPassword = ({data, token}) => async (dispatch) => {
+export const resetPassword = (data) => async (dispatch) => {
     try {
         dispatch({
             type: GLOBALTYPES.ALERT,
@@ -61,7 +96,7 @@ export const resetPassword = ({data, token}) => async (dispatch) => {
             }
         })
         
-        const res = await postAPI('reset-password', data, token)
+        const res = await postAPI('reset-password', data)
         
         dispatch({
             type: GLOBALTYPES.ALERT,

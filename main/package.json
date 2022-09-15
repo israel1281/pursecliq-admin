@@ -1,5 +1,6 @@
 {
   "name": "main",
+  "proxy": "https://api306.purscliq.com",
   "version": "0.1.0",
   "private": true,
   "dependencies": {

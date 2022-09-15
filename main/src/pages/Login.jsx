@@ -3,15 +3,15 @@ import Logo from '../purseblue.png';
 import { useNavigate, Link } from 'react-router-dom';
 import { login } from '../redux/actions/authAction';
 import { useDispatch, useSelector } from 'react-redux';
+import { LoadingOutlined } from '@ant-design/icons';
 
 export default function Login() 
 {
     const initialState = { email: '', password: '' };
     const [userData, setUserData] = useState(initialState);
     const { email, password } = userData;
-    const [loading, setLoading] = useState(false)
     
-    const { auth } = useSelector(state => state);
+    const { auth, alert } = useSelector(state => state);
     const dispatch = useDispatch();
     const navigate = useNavigate();
     
@@ -26,10 +26,9 @@ export default function Login()
     
     const handleSubmit = e => {
         e.preventDefault();
-        setLoading(true)
         dispatch(login(userData))
         .then(() => {
-            setLoading(false)
+            if(auth.token) navigate("/dashboard");
         })
     }
     
@@ -84,7 +83,7 @@ export default function Login()
                          <div className="flex items-center justify-between">
                             <div className="flex items-center">
                             <input id="remember_me" name="remember_me" type="checkbox" className="h-4 w-4 text-indigo-600 focus:ring-indigo-500 border-gray-300 rounded" />
-                            <label for="remember_me" className="ml-2 block text-sm text-white">
+                            <label htmlFor="remember_me" className="ml-2 block text-sm text-white">
                                 Remember me
                             </label>
                             </div>
@@ -103,19 +102,11 @@ export default function Login()
                                 disabled={email && password ? false : true}
                             >
                                 {
-                                    loading ?
-                                    <span
-                                        className='
-                                            spinner-border
-                                            animate-spin
-                                            inline-block
-                                            w-4
-                                            h-4
-                                            border-2
-                                            rounded-full
-                                        '
-                                        role="status"
-                                    ></span> 
+                                    alert.loading ? 
+                                    <span className='flex gap-2'>
+                                        <LoadingOutlined />
+                                        Sign in
+                                    </span>
                                     : 'Sign in'
                                 }
                             </button>
