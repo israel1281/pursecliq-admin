@@ -1,14 +1,26 @@
-import React from 'react'
+import React, {useEffect} from 'react'
 import SelectTransactions from './main/SelectTransactions'
 import {
     FallOutlined,
     LineChartOutlined,
     PieChartFilled,
     AreaChartOutlined
-} from '@ant-design/icons'
+} from '@ant-design/icons';
+import { getMe } from '../redux/actions/authAction';
+import { useDispatch, useSelector } from 'react-redux';
 
 export default function Main()
 {
+    
+    const dispatch = useDispatch();
+    const { auth, users } = useSelector(state => state);
+    
+    const token = sessionStorage.getItem("token")
+    
+    useEffect(() => {
+        dispatch(getMe(token))
+    }, [users])
+    
     return (
         <main className="flex-1 relative overflow-y-auto focus:outline-none">
             <div className="py-6 max-w-7xl mx-auto px-2 sm:px-6 lg:px-4">

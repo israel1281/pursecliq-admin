@@ -1,9 +1,18 @@
-import React, { useState } from 'react'
-import { Tab } from '@headlessui/react'
-import SelectTransactions from '../main/SelectTransactions'
+import React, { useState, useEffect } from 'react';
+import { Tab } from '@headlessui/react';
+import SelectTransactions from '../main/SelectTransactions';
+import { getUsers } from '../../redux/actions/usersAction';
+import { useDispatch, useSelector } from 'react-redux';
 
 
 export default function Users() {
+    
+    const dispatch = useDispatch();
+     const { auth, users } = useSelector(state => state);
+    
+    useEffect(() => {
+        dispatch(getUsers())
+    }, [users])
 
     
     return (
