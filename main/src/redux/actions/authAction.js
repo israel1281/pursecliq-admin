@@ -43,7 +43,9 @@ export const getMe = (token) => async (dispatch) => {
         
         dispatch({
             type: GLOBALTYPES.AUTH,
-            payload: res.data.data,
+            payload: {
+                user: res.data.data
+            }
         })
         
         dispatch({

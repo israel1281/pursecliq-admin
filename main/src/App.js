@@ -43,11 +43,11 @@ function App() {
           <Route path='charges' element={<Charges />} />
           <Route path='point-system' element={<PointSystem />} />
            <Route path='notifications' element={<Notifications />} />
-           <Route path='Accountinfo' element={<AccountInfo />} />
-           <Route path='cardinfo' element={<CardInfo />} />
-           <Route path='userinfo' element={<UserInfo />} />
-           <Route path='admininfo' element={<AdminInfo />} />
-           <Route path='admindetails' element={<AdminDetails />} />
+           <Route path='Account/:id' element={<AccountInfo />} />
+           <Route path='card/:id' element={<CardInfo />} />
+           <Route path='user/:id' element={<UserInfo />} />
+           <Route path='admininfo/:id' element={<AdminInfo />} />
+           <Route path='admindetails/:id' element={<AdminDetails />} />
         </Route>
       </Routes>
     </BrowserRouter>

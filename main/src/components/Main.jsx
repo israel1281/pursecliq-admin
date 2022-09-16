@@ -19,7 +19,7 @@ export default function Main()
     
     useEffect(() => {
         dispatch(getMe(token))
-    }, [users])
+    }, [])
     
     return (
         <main className="flex-1 relative overflow-y-auto focus:outline-none">
