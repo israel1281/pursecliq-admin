@@ -9,10 +9,11 @@ export default function Users() {
     
     const dispatch = useDispatch();
      const { auth, users } = useSelector(state => state);
+     
     
     useEffect(() => {
         dispatch(getUsers())
-    }, [users])
+    }, [])
 
     
     return (
@@ -62,22 +63,27 @@ export default function Users() {
                                                         </th>
                                                     </tr>
                                                 </thead>
-                                                <tbody className="bg-slate-300 divide-y divide-gray-200">
-                                                    <tr>
+                                                    {
+                                                        users.data
+                                                        .filter(user => user.status.title === "active")
+                                                        .map((user, index) => {
+                                                            return (
+                                                                 <tbody className="bg-slate-300 divide-y divide-gray-200">
+                                                    <tr key={index}>
                                                         <td className="px-6 py-4 whitespace-nowrap">
                                                              <div className="flex items-center">
                                                             <div className="flex-shrink-0 h-10 w-10">
-                                                                <img className="h-10 w-10 rounded-full" src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&amp;ixqx=zbhrt3ZpS6&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=facearea&amp;facepad=4&amp;w=256&amp;h=256&amp;q=60" alt="" />
+                                                                <img className="h-10 w-10 rounded-full" src={user.avatar_url} alt="" />
                                                             </div>
                                                             <div className="ml-4">
                                                                 <div className="text-sm font-medium text-gray-900">
-                                                                    Micheal
+                                                                    {user.first_name}
                                                                 </div>
                                                             </div>
                                                             </div>
                                                         </td>
                                                         <td className="px-6 py-4 whitespace-nowrap">
-                                                            <div className="text-sm text-gray-900">Jones</div>
+                                                            <div className="text-sm text-gray-900">{user.last_name}</div>
                                                         </td>
                                                         <td className="px-6 py-4 whitespace-nowrap">
                                                             <span className="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">
@@ -85,16 +91,19 @@ export default function Users() {
                                                             </span>
                                                         </td>
                                                         <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
-                                                            MichealJones@examples.com
+                                                           {user.email}
                                                         </td>
                                                         <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
-                                                            081844444444
+                                                            {user.phone}
                                                         </td>
                                                         <td className="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
-                                                            <a href="https://tailwindui.com/components/application-ui/lists/tables#" class="text-indigo-600 hover:text-indigo-900">View Details</a>
+                                                            <a href={`user/${user.id}`} class="text-indigo-600 hover:text-indigo-900">View Details</a>
                                                         </td>
                                                         </tr>
                                                 </tbody>
+                                                            )
+                                                        })
+                                                    }
                                             </table>
                                         </div>
                                     </div>
@@ -129,22 +138,27 @@ export default function Users() {
                                                         </th>
                                                     </tr>
                                                 </thead>
-                                                <tbody className="bg-slate-300 divide-y divide-gray-200">
-                                                    <tr>
+                                                {
+                                                    users.data
+                                                    .filter(user => user.status.title === "pending")
+                                                    .map((user, index) => {
+                                                        return (
+                                                            <tbody className="bg-slate-300 divide-y divide-gray-200">
+                                                    <tr key={index}>
                                                         <td className="px-6 py-4 whitespace-nowrap">
                                                              <div className="flex items-center">
                                                             <div className="flex-shrink-0 h-10 w-10">
-                                                                <img className="h-10 w-10 rounded-full" src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&amp;ixqx=zbhrt3ZpS6&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=facearea&amp;facepad=4&amp;w=256&amp;h=256&amp;q=60" alt="" />
+                                                                <img className="h-10 w-10 rounded-full" src={user.avatar_url} alt="" />
                                                             </div>
                                                             <div className="ml-4">
                                                                 <div className="text-sm font-medium text-gray-900">
-                                                                    Micheal
+                                                                    {user.first_name}
                                                                 </div>
                                                             </div>
                                                             </div>
                                                         </td>
                                                         <td className="px-6 py-4 whitespace-nowrap">
-                                                            <div className="text-sm text-gray-900">Jones</div>
+                                                            <div className="text-sm text-gray-900">{user.last_name}</div>
                                                         </td>
                                                         <td className="px-6 py-4 whitespace-nowrap">
                                                             <span className="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">
@@ -152,16 +166,19 @@ export default function Users() {
                                                             </span>
                                                         </td>
                                                         <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
-                                                            MichealJones@examples.com
+                                                            {user.email}
                                                         </td>
                                                         <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
-                                                            801844444444
+                                                            {user.phone}
                                                         </td>
                                                         <td className="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
                                                             <a href="https://tailwindui.com/components/application-ui/lists/tables#" class="text-indigo-600 hover:text-indigo-900">View Details</a>
                                                         </td>
                                                         </tr>
                                                 </tbody>
+                                                        )
+                                                    })
+                                                }
                                             </table>
                                         </div>
                                     </div>

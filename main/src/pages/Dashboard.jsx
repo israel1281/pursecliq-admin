@@ -18,7 +18,7 @@ export default function Dashboard()
                             
                             <div className="flex-1 flex flex-col overflow-y-auto">
                                 <nav className="flex-1 px-2 py-4 bg-black space-y-1">
-                                    <a href="/" class="bg-gray-900 text-white group flex items-center px-2 py-2 text-sm font-medium rounded-md">
+                                    <a href="/dashboard" class="bg-gray-900 text-white group flex items-center px-2 py-2 text-sm font-medium rounded-md">
                                         <svg className="text-gray-300 mr-3 h-6 w-6" xmlns="http://www.w3.org/2000/svg" width="21" height="22" viewBox="0 0 24 24" fill="none">
                                             <path d="M9 9.5V0.5H0V9.5H9ZM21 9.5V0.5H12V9.5H21ZM9 21.5V12.5H0V21.5H9ZM21 21.5V12.5H12V21.5H21Z" fill="white"/>
                                         </svg>
